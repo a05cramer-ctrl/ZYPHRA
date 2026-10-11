@@ -11,10 +11,10 @@
 window.ZYPHRA_CFG = {
   NAME: "ZYPHRA",
   TICKER: "ZYPHRA",
-  CA: "",
+  CA: "4utNA4FMG16WvtK9wzAwZqpHg9ZPr7o3Uk6mHnRopump",
   CHAIN: "solana",
   PAD: "pumpfun",
-  X: "",
+  X: "https://x.com/zyphrashield",
   BUY: "",
   CHART: "",
   LOGO: "logo.svg",
