@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ZYPHRA ($ZYPHRA) &middot; Hold it. Get paid in shielded ZEC.</title>
+<meta name="description" content="Every hour, ZYPHRA's pump.fun creator fees turn into ZEC and land in holders' private Zcash addresses. Nobody can see who got paid, or how much.">
+<meta name="theme-color" content="#050508">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="ZYPHRA ($ZYPHRA)">
+<meta property="og:description" content="Hold it. Get paid in shielded ZEC.">
+<meta property="og:image" content="logo.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" id="favicon" href="logo.svg">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="config.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="ZYPHRA, back to top">
+      <img class="brand-logo" data-logo src="logo.svg" alt="" width="28" height="28">
+      <span class="brand-name" data-name>ZYPHRA</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#how">How it works</a>
+      <a href="#register">Register</a>
+      <a href="#earnings">Earnings</a>
+      <a href="#rules">Rules</a>
+    </nav>
+    <a class="btn btn-ghost btn-sm" data-link="BUY"><span>Buy<span class="hide-xs"> $<span data-ticker>ZYPHRA</span></span></span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><i class="spark" aria-hidden="true"></i>Private payouts &middot; Solana &times; Zcash</p>
+      <h1 id="hero-title">Hold it. Get paid in <em>shielded</em> ZEC.</h1>
+      <p class="lede">Every hour, ZYPHRA's fees turn into ZEC and land in holders' private Zcash addresses. Nobody can see who got paid, or how much.</p>
+
+      <div class="ca" data-ca-chip>
+        <span class="ca-k">CA</span>
+        <span class="ca-v mono" data-ca-text>CA posts at launch</span>
+        <button class="ca-copy" type="button" data-copy-ca aria-label="Copy contract address">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 5.5V3.5a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2"/></svg>
+          <span data-copy-label>Copy</span>
+        </button>
+      </div>
+
+      <div class="ctas">
+        <a class="btn btn-gold" data-link="BUY"><span>Buy $<span data-ticker>ZYPHRA</span></span></a>
+        <a class="btn btn-ghost" data-link="CHART">Chart<svg class="i-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5"/></svg></a>
+      </div>
+
+      <dl class="live">
+        <div><dt>ZEC</dt><dd class="mono" id="zecPrice">--</dd></div>
+        <div><dt>SOL</dt><dd class="mono" id="solPrice">--</dd></div>
+        <div><dt>Next round</dt><dd class="mono gold-text" id="nextRound">--:--</dd></div>
+      </dl>
+    </div>
+
+    <figure class="lens-panel" aria-labelledby="lens-cap">
+      <div class="panel-bar">
+        <span class="bar-l"><i class="pulse-dot" aria-hidden="true"></i>Shielded pool <span class="dim">&middot; Orchard</span></span>
+        <span class="tag">Demonstration</span>
+      </div>
+      <div class="lens-stage" id="lensStage">
+        <canvas id="lens" role="img" aria-label="Demonstration of the viewing lens: an encrypted field of shielded notes. Inside the lens only the payout notes for a sample address decrypt; every other note stays scrambled."></canvas>
+      </div>
+      <figcaption class="panel-foot" id="lens-cap">
+        <span>Round <b class="mono" id="lensRound">1,204</b> <span class="dim">&middot; 1 shielded tx</span></span>
+        <span class="dim lens-hint" id="lensHint">Move the lens. Only your notes decrypt.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- HOW A ROUND WORKS -->
+<section class="sec" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">How a round works</p>
+      <h2 id="how-title">One transaction an hour. That's all anyone sees.</h2>
+    </div>
+
+    <ol class="pipe" id="pipe">
+      <li class="pipe-step">
+        <span class="node" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6.5"/><path d="M10 6.5v7M7.8 8.5c0-1 1-1.6 2.2-1.6s2.2.6 2.2 1.5-1 1.3-2.2 1.6-2.2.7-2.2 1.6 1 1.5 2.2 1.5 2.2-.6 2.2-1.6"/></svg></span>
+        <span class="step-n mono">01</span>
+        <h3>Fees</h3>
+        <p>100% of $<span data-ticker>ZYPHRA</span>'s pump.fun creator fees flow to the distributor wallet.</p>
+      </li>
+      <li class="pipe-step">
+        <span class="node" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 7h11l-3-3M16 13H5l3 3"/></svg></span>
+        <span class="step-n mono">02</span>
+        <h3>Swap to ZEC</h3>
+        <p>On the hour, the SOL is swapped into native ZEC through NEAR Intents.</p>
+      </li>
+      <li class="pipe-step">
+        <span class="node" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 3l6 2.5v4c0 3.6-2.6 6.3-6 7.5-3.4-1.2-6-3.9-6-7.5v-4z"/><path d="M7.5 10l1.8 1.8L12.8 8.3"/></svg></span>
+        <span class="step-n mono">03</span>
+        <h3>One shielded tx</h3>
+        <p>One Orchard output per registered holder, pro rata to your balance at the snapshot.</p>
+      </li>
+      <li class="pipe-step">
+        <span class="node" aria-hidden="true"><svg viewBox="0 0 20 20"><rect x="3" y="5" width="14" height="11" rx="2"/><path d="M3 8.5h14M13 12.2h1.5"/></svg></span>
+        <span class="step-n mono">04</span>
+        <h3>Your wallet</h3>
+        <p>ZEC lands in your shielded address. Only you can see it arrive.</p>
+      </li>
+    </ol>
+
+    <div class="ledger">
+      <div class="ledger-head">
+        <div>
+          <h3>Public round log</h3>
+          <p class="dim">Per-round totals and the txid. That is everything the distributor publishes.</p>
+        </div>
+        <span class="tag">Sample</span>
+      </div>
+      <div class="table-scroll">
+        <table class="ledger-table">
+          <thead><tr><th scope="col">Round</th><th scope="col">Time (UTC)</th><th scope="col">Zcash txid</th><th scope="col" class="num">Fees in</th><th scope="col" class="num">Paid out</th></tr></thead>
+          <tbody id="ledgerBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="sec" id="register" aria-labelledby="reg-title">
+  <div class="wrap split">
+    <div class="sec-head sticky-head">
+      <p class="kicker">Register</p>
+      <h2 id="reg-title">Register once. Get paid every hour.</h2>
+      <p class="sec-sub">Link your Solana wallet to a shielded Zcash address with one signature. No transaction, no gas, no tokens leave your wallet.</p>
+      <ul class="checks">
+        <li>Unified addresses (<span class="mono">u1&hellip;</span>) preferred</li>
+        <li>Sapling (<span class="mono">zs1&hellip;</span>) accepted</li>
+        <li>Transparent (<span class="mono">t1</span> / <span class="mono">t3</span>) rejected: they can't receive shielded payouts</li>
+      </ul>
+      <p class="notice"><i class="spark" aria-hidden="true"></i>Registration opens at launch. The form on this page is a working preview; nothing is stored or sent.</p>
+    </div>
+
+    <div class="card reg" id="regCard">
+      <div class="reg-step" id="stepWallet" data-state="todo">
+        <span class="reg-n mono">1</span>
+        <div class="reg-body">
+          <div class="reg-row">
+            <div>
+              <h3>Connect Solana wallet</h3>
+              <p class="dim" id="walletStatus">Phantom, Solflare or Backpack.</p>
+            </div>
+            <button class="btn btn-ghost btn-sm" type="button" id="btnConnect">Connect <span class="dim">demo</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="reg-step" id="stepAddr" data-state="todo">
+        <span class="reg-n mono">2</span>
+        <div class="reg-body">
+          <h3><label for="zaddr">Shielded Zcash address</label></h3>
+          <div class="field-wrap">
+            <textarea id="zaddr" class="input mono" rows="2" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="u1... or zs1..." aria-describedby="zaddrMsg"></textarea>
+          </div>
+          <div class="addr-meta">
+            <p class="addr-msg" id="zaddrMsg" data-kind="idle" aria-live="polite">Paste a unified (u1&hellip;) or Sapling (zs1&hellip;) address.</p>
+            <button class="link-btn" type="button" id="useSample">Use sample</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="reg-step" id="stepSign" data-state="todo">
+        <span class="reg-n mono">3</span>
+        <div class="reg-body">
+          <div class="reg-row">
+            <div>
+              <h3>Sign one message</h3>
+              <p class="dim">Proves you own the wallet. Free, off-chain.</p>
+            </div>
+            <button class="btn btn-ghost btn-sm" type="button" id="btnSign" disabled>Sign <span class="dim">demo</span></button>
+          </div>
+          <pre class="msg mono" id="signMsg" aria-label="Message to sign"></pre>
+          <p class="reg-done" id="regDone" hidden>Signed in demo mode. Nothing was stored or sent. Registration opens at launch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EARNINGS -->
+<section class="sec" id="earnings" aria-labelledby="earn-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Earnings</p>
+      <h2 id="earn-title">What your bag earns.</h2>
+      <p class="sec-sub">An example, not a promise. Your share is your balance over the registered supply, so assuming every token is registered gives the floor.</p>
+    </div>
+
+    <div class="card calc">
+      <div class="calc-in">
+        <div class="ctl">
+          <div class="ctl-top"><label for="inBag">Your bag</label><span class="ctl-val mono"><span id="bagPct">1.00</span>% of supply</span></div>
+          <div class="num-in"><input class="input mono" id="inBag" type="text" inputmode="numeric" value="10,000,000" aria-describedby="bagNote"><span class="unit">$<span data-ticker>ZYPHRA</span></span></div>
+          <input type="range" id="rgBag" min="0" max="1000" step="1" value="500" aria-label="Your bag, slider">
+          <p class="ctl-note dim" id="bagNote">of 1,000,000,000</p>
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="inVol">Daily volume</label><span class="ctl-val mono" id="volUsd">--</span></div>
+          <div class="num-in"><input class="input mono" id="inVol" type="text" inputmode="decimal" value="5,000"><span class="unit">SOL</span></div>
+          <input type="range" id="rgVol" min="0" max="1000" step="1" value="500" aria-label="Daily volume, slider">
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="inFee">Creator fee</label><span class="ctl-val mono dim">example</span></div>
+          <div class="num-in"><input class="input mono" id="inFee" type="text" inputmode="decimal" value="0.3"><span class="unit">%</span></div>
+        </div>
+      </div>
+
+      <div class="calc-out" aria-live="polite">
+        <div class="out-top"><span class="dim">Your ZEC</span><span class="tag">Example</span></div>
+        <div class="out-grid">
+          <div class="out">
+            <span class="out-k">Per day</span>
+            <span class="out-v gold-text mono" id="outDay">0.0000</span>
+            <span class="out-u mono" id="outDayUsd">$0.00</span>
+          </div>
+          <div class="out">
+            <span class="out-k">Per month</span>
+            <span class="out-v gold-text mono" id="outMonth">0.0000</span>
+            <span class="out-u mono" id="outMonthUsd">$0.00</span>
+          </div>
+        </div>
+        <dl class="out-rows">
+          <div><dt>Fees to distributor / day</dt><dd class="mono" id="outFees">--</dd></div>
+          <div><dt>Your payout / round (hourly)</dt><dd class="mono" id="outRound">--</dd></div>
+          <div><dt>Prices</dt><dd class="mono" id="outPrices">--</dd></div>
+        </dl>
+        <p class="out-note" id="outNote"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RULES -->
+<section class="sec" id="rules" aria-labelledby="rules-title">
+  <div class="wrap split">
+    <div class="sec-head sticky-head">
+      <p class="kicker">Rules</p>
+      <h2 id="rules-title">What's true.</h2>
+      <p class="sec-sub">The full mechanic, including what isn't live yet.</p>
+    </div>
+    <div class="card rules-card">
+      <table class="rules">
+        <tbody>
+          <tr><th scope="row">Fee source</th><td>100% of $<span data-ticker>ZYPHRA</span>'s pump.fun creator fees go to the distributor wallet, set at launch with pump.fun creator-fee sharing.</td></tr>
+          <tr><th scope="row">Schedule</th><td>Every hour, at the top of the UTC hour.</td></tr>
+          <tr><th scope="row">Swap</th><td>SOL into native ZEC through the NEAR Intents 1Click API, delivered to a Zcash address.</td></tr>
+          <tr><th scope="row">Payout</th><td>One shielded Zcash transaction per round. One Orchard output per registered holder.</td></tr>
+          <tr><th scope="row">Your share</th><td>Pro rata to your $<span data-ticker>ZYPHRA</span> balance at the hourly snapshot.</td></tr>
+          <tr><th scope="row">Minimum hold</th><td><span class="mono" data-cfg="MIN_HOLD">500,000</span> $<span data-ticker>ZYPHRA</span>.</td></tr>
+          <tr><th scope="row">Minimum payout</th><td>Under <span class="mono" data-cfg="MIN_PAYOUT_ZEC">0.001</span> ZEC rolls over to the next hour.</td></tr>
+          <tr><th scope="row">Addresses</th><td>Unified (<span class="mono">u1</span>) preferred. Sapling (<span class="mono">zs1</span>) accepted. Transparent (<span class="mono">t1</span>, <span class="mono">t3</span>) rejected.</td></tr>
+          <tr><th scope="row">What the chain shows</th><td>One shielded transaction an hour. Not who was paid, not how much.</td></tr>
+          <tr><th scope="row">What the distributor knows</th><td>The wallet-to-address mapping it needs to pay you. It publishes only per-round totals and the round txid.</td></tr>
+          <tr><th scope="row">Status</th><td>Distributor and registry go live at launch. Anything marked <span class="tag tag-inline">Sample</span> or <span class="tag tag-inline">Demonstration</span> is illustrative.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TOKEN -->
+<section class="sec sec-last close" id="token" aria-labelledby="token-title">
+  <div class="close-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap close-in">
+    <img class="token-logo" data-logo src="logo.svg" alt="ZYPHRA logo" width="88" height="88">
+    <h2 id="token-title">$<span data-ticker>ZYPHRA</span></h2>
+    <p class="close-sub">Hold it. Get paid in <em>shielded</em> ZEC.</p>
+    <div class="ca" data-ca-chip>
+      <span class="ca-k">CA</span>
+      <span class="ca-v mono" data-ca-text>CA posts at launch</span>
+      <button class="ca-copy" type="button" data-copy-ca aria-label="Copy contract address">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 5.5V3.5a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2"/></svg>
+        <span data-copy-label>Copy</span>
+      </button>
+    </div>
+    <div class="token-btns">
+      <a class="btn btn-light" data-link="BUY"><span>Buy $<span data-ticker>ZYPHRA</span></span></a>
+      <a class="btn btn-ghost" data-link="CHART">Chart</a>
+      <a class="btn btn-ghost" data-link="X" aria-label="ZYPHRA on X"><svg class="i-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.8 8 10.2h-6.3l-4.9-6.4L5.3 21H2.2l7.3-8.3L1.9 3h6.4l4.4 5.9zm-1.1 16.2h1.7L7.4 4.7H5.6z"/></svg><span>Follow</span></a>
+    </div>
+    <dl class="token-meta">
+      <div><dt>Chain</dt><dd>Solana</dd></div>
+      <div><dt>Launch</dt><dd>pump.fun</dd></div>
+      <div><dt>Supply</dt><dd class="mono" data-cfg="SUPPLY">1,000,000,000</dd></div>
+      <div><dt>Min. hold</dt><dd class="mono" data-cfg="MIN_HOLD">500,000</dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span class="brand brand-sm"><img class="brand-logo" data-logo src="logo.svg" alt="" width="20" height="20"><span class="brand-name" data-name>ZYPHRA</span></span>
+    <div class="foot-txt">
+      <p>ZYPHRA is an independent project, not affiliated with Electric Coin Co. or the Zcash Foundation. Not financial advice.</p>
+      <p class="foot-src">Prices: CoinGecko &middot; Swaps: NEAR Intents 1Click &middot; Payouts: Zcash Orchard</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>
